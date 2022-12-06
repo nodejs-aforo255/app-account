@@ -8,7 +8,7 @@ on:
  
 env:
   DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
-  DOCKER_IMAGE_NAME: aforo255-nodejs-account
+  DOCKER_IMAGE_NAME: aforo255-nodejs-account-vrr
  
 jobs:
   docker:
@@ -23,6 +23,3 @@ jobs:
       run: docker login --username ${{ secrets.DOCKER_HUB_USER }} --password ${{ secrets.DOCKER_HUB_PASSWORD }}
     - name: Push the docker image
       run: docker push $DOCKER_HUB_USER/$DOCKER_IMAGE_NAME:v-$GITHUB_RUN_NUMBER
-	
- 
- 
